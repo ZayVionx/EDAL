@@ -64,8 +64,8 @@ static int32_t EDAL_SPI_PowerControl(EDAL_POWER_STATE state)
 }
 
 /*============================ PROTOTYPES ====================================*/
-extern EDAL_DRIVER_SPI Driver_SPI0;
-EDAL_DRIVER_SPI Driver_SPI0 = {
+extern EDAL_DRIVER_SPI EDAL_Driver_SPI_(0);
+EDAL_DRIVER_SPI EDAL_Driver_SPI_(0) = {
     EDAL_SPI_GetVersion,
     EDAL_SPI_Initialize,
     EDAL_SPI_Uninitialize,

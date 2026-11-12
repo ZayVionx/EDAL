@@ -60,8 +60,8 @@ static int32_t EDAL_I2C_PowerControl(EDAL_POWER_STATE state)
 }
 
 /*============================ PROTOTYPES ====================================*/
-extern EDAL_DRIVER_I2C Driver_I2C0;
-EDAL_DRIVER_I2C Driver_I2C0 = {
+extern EDAL_DRIVER_I2C EDAL_Driver_I2C_(0);
+EDAL_DRIVER_I2C EDAL_Driver_I2C_(0) = {
     EDAL_I2C_GetVersion,
     EDAL_I2C_Initialize,
     EDAL_I2C_Uninitialize,

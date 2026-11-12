@@ -20,7 +20,7 @@
 #include "Device_BEEP.h"
 
 /*============================ MACROS ========================================*/
-#define EDAL_BEEP_DRV_VERSION    EDAL_DEVICE_VERSION_MAJOR_MINOR(0,0)    /* driver version
+#define EDAL_BEEP_DRV_VERSION    EDAL_DEVICE_VERSION_MAJOR_MINOR(0,0)    /* driver version */
 
 /*============================ MACROFIED FUNCTIONS ===========================*/
 /*============================ TYPES =========================================*/
@@ -49,8 +49,8 @@ static int32_t EDAL_BEEP_Uninitialize(void)
 }
 
 /*============================ PROTOTYPES ====================================*/
-extern EDAL_DEVICE_BEEP Driver_BEEP0;
-EDAL_DEVICE_BEEP Driver_SPI0 = {
+extern EDAL_DEVICE_BEEP EDAL_Device_BEEP_(0);
+EDAL_DEVICE_BEEP EDAL_Device_BEEP_(0) = {
     EDAL_BEEP_GetVersion,
     EDAL_BEEP_Initialize,
     EDAL_BEEP_Uninitialize,

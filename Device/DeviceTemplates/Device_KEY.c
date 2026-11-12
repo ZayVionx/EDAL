@@ -20,7 +20,7 @@
 #include "Device_KEY.h"
 
 /*============================ MACROS ========================================*/
-#define EDAL_KEY_DRV_VERSION    EDAL_DEVICE_VERSION_MAJOR_MINOR(0,0)    /* driver version
+#define EDAL_KEY_DRV_VERSION    EDAL_DEVICE_VERSION_MAJOR_MINOR(0,0)    /* driver version */
 
 /*============================ MACROFIED FUNCTIONS ===========================*/
 /*============================ TYPES =========================================*/
@@ -49,8 +49,8 @@ static int32_t EDAL_KEY_Uninitialize(void)
 }
 
 /*============================ PROTOTYPES ====================================*/
-extern EDAL_DEVICE_KEY Driver_KEY0;
-EDAL_DEVICE_KEY Driver_SPI0 = {
+extern EDAL_DEVICE_KEY EDAL_Device_KEY_(0);
+EDAL_DEVICE_KEY EDAL_Device_KEY_(0) = {
     EDAL_KEY_GetVersion,
     EDAL_KEY_Initialize,
     EDAL_KEY_Uninitialize,
