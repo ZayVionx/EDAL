@@ -8,7 +8,7 @@
 /*============================ GLOBAL VARIABLES ==============================*/
 /*============================ LOCAL VARIABLES ===============================*/
 /*============================ PROTOTYPES ====================================*/
-static uint8_t LCD_Device_IsValid(const LCD_DeviceInfo *device)
+static uint8_t LCD_Device_IsValid(const LCD_Device_t *device)
 {
     return (   device                    != NULL 
             && device->drv               != NULL
@@ -33,7 +33,7 @@ static uint8_t LCD_Device_IsValid(const LCD_DeviceInfo *device)
  * @retval: EDAL_STATUS_OK on success,
  *          otherwise an error code.
  */
-EDAL_Status_t LCD_Init(LCD_DeviceInfo *device)
+EDAL_Status_t LCD_Init(LCD_Device_t *device)
 {
     EDAL_Status_t status;
 
@@ -61,7 +61,7 @@ EDAL_Status_t LCD_Init(LCD_DeviceInfo *device)
  * @retval: EDAL_STATUS_OK on success,
  *          otherwise an error code.
  */
-EDAL_Status_t LCD_DeInit(LCD_DeviceInfo *device)
+EDAL_Status_t LCD_DeInit(LCD_Device_t *device)
 {
     EDAL_Status_t status;
 
@@ -91,7 +91,7 @@ EDAL_Status_t LCD_DeInit(LCD_DeviceInfo *device)
  *          EDAL_STATUS_NOT_READY if the device is not initialized,
  *          otherwise an error code.
  */
-EDAL_Status_t LCD_DisplayOn(LCD_DeviceInfo *device)
+EDAL_Status_t LCD_DisplayOn(LCD_Device_t *device)
 {
     if (!LCD_Device_IsValid(device)) {
         return EDAL_STATUS_INVALID_ARG;
@@ -110,7 +110,7 @@ EDAL_Status_t LCD_DisplayOn(LCD_DeviceInfo *device)
  *          EDAL_STATUS_NOT_READY if the device is not initialized,
  *          otherwise an error code.
  */
-EDAL_Status_t LCD_DisplayOff(LCD_DeviceInfo *device)
+EDAL_Status_t LCD_DisplayOff(LCD_Device_t *device)
 {
     if (!LCD_Device_IsValid(device)) {
         return EDAL_STATUS_INVALID_ARG;
@@ -130,7 +130,7 @@ EDAL_Status_t LCD_DisplayOff(LCD_DeviceInfo *device)
  *          EDAL_STATUS_NOT_READY if the device is not initialized,
  *          otherwise an error code.
  */
-EDAL_Status_t LCD_SetDirection(LCD_DeviceInfo *device, uint8_t direction)
+EDAL_Status_t LCD_SetDirection(LCD_Device_t *device, uint8_t direction)
 {
     if (!LCD_Device_IsValid(device)) {
         return EDAL_STATUS_INVALID_ARG;
@@ -150,7 +150,7 @@ EDAL_Status_t LCD_SetDirection(LCD_DeviceInfo *device, uint8_t direction)
  *          EDAL_STATUS_NOT_READY if the device is not initialized,
  *          otherwise an error code.
  */
-EDAL_Status_t LCD_SetBacklight(LCD_DeviceInfo *device, uint8_t brightness)
+EDAL_Status_t LCD_SetBacklight(LCD_Device_t *device, uint8_t brightness)
 {
     if (!LCD_Device_IsValid(device)) {
         return EDAL_STATUS_INVALID_ARG;
@@ -171,7 +171,7 @@ EDAL_Status_t LCD_SetBacklight(LCD_DeviceInfo *device, uint8_t brightness)
  *          EDAL_STATUS_NOT_READY if the device is not initialized,
  *          otherwise an error code from the driver.
  */
-EDAL_Status_t LCD_DisplayClear(LCD_DeviceInfo *device, void *color)
+EDAL_Status_t LCD_DisplayClear(LCD_Device_t *device, void *color)
 {
     if (!LCD_Device_IsValid(device) || color == NULL) {
         return EDAL_STATUS_INVALID_ARG;
@@ -200,7 +200,7 @@ EDAL_Status_t LCD_DisplayClear(LCD_DeviceInfo *device, void *color)
  *          EDAL_STATUS_NOT_READY if the device is not initialized,
  *          otherwise an error code from the driver.
  */
-EDAL_Status_t LCD_DisplayDraw(LCD_DeviceInfo *device, uint16_t x_start,
+EDAL_Status_t LCD_DisplayDraw(LCD_Device_t *device, uint16_t x_start,
                                                      uint16_t y_start, 
                                                      uint16_t x_end, 
                                                      uint16_t y_end,

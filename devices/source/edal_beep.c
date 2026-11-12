@@ -15,7 +15,9 @@ static uint8_t Beep_Device_IsValid(const Beep_Device_t *device)
             && device->drv->Init    != NULL 
             && device->drv->DeInit  != NULL
             && device->drv->Play    != NULL 
-            && device->drv->Stop    != NULL );
+            && device->drv->Stop    != NULL
+            && device->drv->SetVol  != NULL
+            && device->drv->GetVol  != NULL );
 }
 
 /*============================ IMPLEMENTATION ================================*/

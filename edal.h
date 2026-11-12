@@ -21,8 +21,7 @@
 
 /*============================ INCLUDES ======================================*/
 #include "device/edal_types.h"
-#include "device/include/edal_beep.h"
-#include "device/include/edal_lcd.h"
+
 
 #ifdef   __cplusplus
 extern "C" {

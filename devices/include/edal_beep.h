@@ -19,7 +19,6 @@ typedef struct {
     EDAL_Status_t (*DeInit )(void *context);
     EDAL_Status_t (*Play   )(void *context, uint32_t count, uint32_t duration_ms);
     EDAL_Status_t (*Stop   )(void *context);
-
     EDAL_Status_t (*SetVol )(void *context, uint32_t volume);
     uint32_t      (*GetVol )(void *context);
 } Beep_DrvType_t;

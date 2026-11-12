@@ -1,19 +1,19 @@
-#ifndef __BEEP_DRV_H__
-#define __BEEP_DRV_H__
+#ifndef __KEY_H__
+#define __KEY_H__
 
 /*============================ INCLUDES ======================================*/
-#include "../../device/include/edal_beep.h"
+#include "../../device/include/edal_key.h"
 
 #ifdef   __cplusplus
 extern "C" {
 #endif
 /*============================ MACROS ========================================*/
-#define BEEP_DRV_NUM    1
+#define KEY_DRV_NUM     1
 
 /*============================ MACROFIED FUNCTIONS ===========================*/
 /*============================ TYPES =========================================*/
 /*============================ GLOBAL VARIABLES ==============================*/
-extern Beep_Device_t beep_dev[BEEP_DRV_NUM];
+extern Key_Device_t key[KEY_DRV_NUM];
 
 /*============================ LOCAL VARIABLES ===============================*/
 /*============================ PROTOTYPES ====================================*/
@@ -22,4 +22,4 @@ extern Beep_Device_t beep_dev[BEEP_DRV_NUM];
 #ifdef   __cplusplus
 }
 #endif
-#endif /* __BEEP_DRV_H__ */
+#endif /* __KEY_H__ */
