@@ -18,8 +18,6 @@
 
 /*============================ INCLUDES ======================================*/
 #include "edal.h"
-#include "device/include/edal_beep.h"
-#include "device/include/edal_lcd.h"
 
 /*============================ MACROS ========================================*/
 /*============================ MACROFIED FUNCTIONS ===========================*/
@@ -33,12 +31,12 @@
  *
  * This placeholder does not initialize any devices.
  *
- * @retval: EDAL_DEVICE_READY unconditionally.
+ * @retval: 1 unconditionally.
  */
-EDAL_DeviceState_t edal_board_devices_init(void)
+uint16_t edal_board_devices_init(void)
 {
 
-    return EDAL_DEVICE_READY;
+    return 1;
 }
 
 /*============================ END ===========================================*/

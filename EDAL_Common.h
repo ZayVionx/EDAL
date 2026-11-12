@@ -40,7 +40,33 @@ typedef struct _EDAL_VERSION {
     uint16_t drv;
 } EDAL_VERSION;
 
+/**
+ * \brief General power status
+ */
+typedef enum _EDAL_POWER_STATE {
+    EDAL_POWER_OFF,                         //!< Power off: no operation possible
+    EDAL_POWER_LOW,                         //!< Low Power mode: retain state, detect and signal wake-up events
+    EDAL_POWER_FULL                         //!< Power on: full operation at maximum performance
+} EDAL_POWER_STATE;
 
+
+/* General driver return codex */
+#define EDAL_DRIVER_OK                   0  //!< Operation succeeded
+#define EDAL_DRIVER_ERROR               -1  //!< Unspecified error
+#define EDAL_DRIVER_ERROR_BUSY          -2  //!< Driver is busy
+#define EDAL_DRIVER_ERROR_TIMEOUT       -3  //!< Timeout occurred
+#define EDAL_DRIVER_ERROR_UNSUPPORTED   -4  //!< Operation not supported
+#define EDAL_DRIVER_ERROR_PARAMETER     -5  //!< Parameter error
+#define EDAL_DRIVER_ERROR_SPECIFIC      -6  //!< Start of driver specific errors
+
+/* General device return codex */
+#define EDAL_DEVICE_OK                   0  //!< Operation succeeded
+#define EDAL_DEVICE_ERROR               -1  //!< Unspecified error
+#define EDAL_DEVICE_ERROR_BUSY          -2  //!< Driver is busy
+#define EDAL_DEVICE_ERROR_TIMEOUT       -3  //!< Timeout occurred
+#define EDAL_DEVICE_ERROR_UNSUPPORTED   -4  //!< Operation not supported
+#define EDAL_DEVICE_ERROR_PARAMETER     -5  //!< Parameter error
+#define EDAL_DEVICE_ERROR_SPECIFIC      -6  //!< Start of driver specific errors
 
 /*============================ GLOBAL VARIABLES ==============================*/
 /*============================ LOCAL VARIABLES ===============================*/

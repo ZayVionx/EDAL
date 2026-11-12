@@ -17,20 +17,20 @@
 ****************************************************************************/
 
 /*============================ INCLUDES ======================================*/
-#include "Driver_I2C.h"
+#include "../Include/Driver_I2C.h"
 
 /*============================ MACROS ========================================*/
-#define EDAL_I2C_DRV_VERSION    EDAL_DRIVER_VERSION_MAJOR_MINOR(0,0)    /* driver version */
+#define EDAL_I2C_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* driver version */
 
 /*============================ LOCAL VARIABLES ===============================*/
 /* Driver Version */
-static const EDAL_DRIVER_VERSION DriverVersion = {
+static const EDAL_VERSION DriverVersion = {
     EDAL_I2C_API_VERSION,
     EDAL_I2C_DRV_VERSION
 };
 
 /*============================ IMPLEMENTATION ================================*/
-static EDAL_DRIVER_VERSION EDAL_I2C_GetVersion(void)
+static EDAL_VERSION EDAL_I2C_GetVersion(void)
 {
     return DriverVersion;
 }

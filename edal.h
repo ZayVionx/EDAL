@@ -20,8 +20,7 @@
 #define __EDAL_H__
 
 /*============================ INCLUDES ======================================*/
-#include "device/edal_types.h"
-
+#include <stdint.h>
 
 #ifdef   __cplusplus
 extern "C" {
@@ -32,7 +31,7 @@ extern "C" {
 /*============================ GLOBAL VARIABLES ==============================*/
 /*============================ LOCAL VARIABLES ===============================*/
 /*============================ PROTOTYPES ====================================*/
-EDAL_DeviceState_t edal_board_devices_init(void);
+uint16_t edal_board_devices_init(void);
 
 /*============================ IMPLEMENTATION ================================*/
 /*============================ END ===========================================*/

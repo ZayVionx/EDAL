@@ -20,13 +20,13 @@
 #define __DEVICE_KEY_H__
 
 /*============================ INCLUDES ======================================*/
-#include "Device_Common.h"
+#include "../../EDAL_Common.h"
 
 #ifdef   __cplusplus
 extern "C" {
 #endif
 /*============================ MACROS ========================================*/
-#define EDAL_KEY_API_VERSION    EDAL_DEVICE_VERSION_MAJOR_MINOR(0,0)    /* API version */
+#define EDAL_KEY_API_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* API version */
 
 #define _EDAL_Device_KEY_(n)          Device_KEY##n
 #define  EDAL_Device_KEY_(n)    _EDAL_Device_KEY_(n)
@@ -38,9 +38,9 @@ extern "C" {
  * \brief Access structure of the SPI Driver.
  */
 typedef struct _EDAL_DEVICE_KEY {
-    EDAL_DEVICE_VERSION     (*GetVersion)   (void);
-    int32_t                 (*Initialize)   (void);
-    int32_t                 (*Uninitialize) (void);
+    EDAL_VERSION        (*GetVersion)   (void);
+    int32_t             (*Initialize)   (void);
+    int32_t             (*Uninitialize) (void);
     
 } const EDAL_DEVICE_KEY;
 

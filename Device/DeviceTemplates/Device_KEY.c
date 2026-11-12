@@ -17,17 +17,17 @@
 ****************************************************************************/
 
 /*============================ INCLUDES ======================================*/
-#include "Device_KEY.h"
+#include "../Include/Device_KEY.h"
 
 /*============================ MACROS ========================================*/
-#define EDAL_KEY_DRV_VERSION    EDAL_DEVICE_VERSION_MAJOR_MINOR(0,0)    /* driver version */
+#define EDAL_KEY_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* driver version */
 
 /*============================ MACROFIED FUNCTIONS ===========================*/
 /*============================ TYPES =========================================*/
 /*============================ GLOBAL VARIABLES ==============================*/
 /*============================ LOCAL VARIABLES ===============================*/
 /* Device Version */
-static const EDAL_DEVICE_VERSION DeviceVersion = {
+static const EDAL_VERSION DeviceVersion = {
     EDAL_KEY_API_VERSION,
     EDAL_KEY_DRV_VERSION
 };
@@ -35,7 +35,7 @@ static const EDAL_DEVICE_VERSION DeviceVersion = {
 
 
 /*============================ IMPLEMENTATION ================================*/
-static EDAL_DEVICE_VERSION EDAL_KEY_GetVersion(void)
+static EDAL_VERSION EDAL_KEY_GetVersion(void)
 {
     return DeviceVersion;
 }
