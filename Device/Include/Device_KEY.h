@@ -35,7 +35,7 @@ extern "C" {
 /*============================ TYPES =========================================*/
 
 /**
- * \brief Access structure of the SPI Driver.
+ * \brief Access structure of the KEY Driver.
  */
 typedef struct _EDAL_DEVICE_KEY {
     EDAL_VERSION        (*GetVersion)   (void);

@@ -17,7 +17,7 @@
 ****************************************************************************/
 
 /*============================ INCLUDES ======================================*/
-#include "../Include/Driver_I2C.h"
+#include "Driver/Include/Driver_I2C.h"
 
 /*============================ MACROS ========================================*/
 #define EDAL_I2C_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* driver version */
@@ -60,7 +60,8 @@ static int32_t EDAL_I2C_PowerControl(EDAL_POWER_STATE state)
 }
 
 /*============================ PROTOTYPES ====================================*/
-extern EDAL_DRIVER_I2C EDAL_Driver_I2C_(0);
+extern 
+EDAL_DRIVER_I2C EDAL_Driver_I2C_(0);
 EDAL_DRIVER_I2C EDAL_Driver_I2C_(0) = {
     EDAL_I2C_GetVersion,
     EDAL_I2C_Initialize,

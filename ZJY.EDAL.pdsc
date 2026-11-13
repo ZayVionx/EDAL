@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.7.28"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+         xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/main/schema/PACK.xsd">
+
+    <vendor>ZJY</vendor>
+    <name>EDAL</name>
+    <description>
+        Embedded Device Abstraction Layer.
+    </description>
+    <url>https://github.com/ZJY-Nerd/EDAL/</url>
+    <supportContact>zhujinyuan818@gmail.com</supportContact>
+    <license>LICENSE</license>
+
+    <!-- ================================================================== -->
+    <!--  Keywords                                                          -->
+    <!-- ================================================================== -->
+    <keywords>
+        <keyword>EDAL</keyword>
+    </keywords>
+
+    <!-- ================================================================== -->
+    <!--  Release History                                                   -->
+    <!-- ================================================================== -->
+    <releases>
+        <release version="1.0.0" date="2026-11-13">
+            Revision v1.0.0
+            - Initial Version
+        </release>
+    </releases>
+
+    <!-- ================================================================== -->
+    <!--  Conditions                                                        -->
+    <!-- ================================================================== -->
+    <!-- <conditions>
+        <condition id="EDAL Driver">
+            <description>Requires GUI_LVGL_Wrapper Core component</description>
+            <require Cclass="EDAL" Cgroup="Core"/>
+        </condition>
+
+        <condition id="EDAL Device">
+            <description>Requires GUI_LVGL_Wrapper Core component</description>
+            <require Cclass="EDAL" Cgroup="Core"/>
+        </condition>
+
+    </conditions> -->
+
+    <!-- ================================================================== -->
+    <!--  Components                                                        -->
+    <!-- ================================================================== -->
+    <components>
+         <component Cclass="EDAL" Cgroup="Driver" Cversion="1.0.0">
+            <description>
+                EDAL Driver api and template source.
+            </description>
+
+            <files>
+                <!-- ======== Framework headers (read-only) ================ -->
+                <file category="header" version="1.0.0" name="EDAL_Common.h"/>
+                <file category="header" version="1.0.0" name="Driver/Include/Driver_GPIO.h"/>
+                <file category="header" version="1.0.0" name="Driver/Include/Driver_I2C.h"/>
+                <file category="header" version="1.0.0" name="Driver/Include/Driver_SPI.h"/>
+
+                <!-- ======== Framework headers (read-write) ================ -->
+                <file category="sourceC" attr="config" version="1.0.0" name="Driver/DriverTemplates/Driver_GPIO.c"/>
+                <file category="sourceC" attr="config" version="1.0.0" name="Driver/DriverTemplates/Driver_I2C.c"/>
+                <file category="sourceC" attr="config" version="1.0.0" name="Driver/DriverTemplates/Driver_SPI.c"/>
+
+            </files>
+            <Pre_Include_Global_h>
+#define __EDAL_DRIVER__         1
+            </Pre_Include_Global_h>
+
+            <!-- Inject RTE_Components_h macro so code can detect the pack -->
+            <RTE_Components_h>
+#define __EDAL_DRIVER__         1
+            </RTE_Components_h>
+        </component>
+
+
+        <component Cclass="EDAL"  Cgroup="Device"  Cversion="1.1.0">
+            <description>
+                EDAL Device api and template source.
+            </description>
+
+            <files>
+                <!-- ======== Framework headers (read-only) ================ -->
+                <file category="header" version="1.0.0" name="Device/Include/Device_BEEP.h"/>
+                <file category="header" version="1.0.0" name="Device/Include/Device_KEY.h"/>
+                <file category="header" version="1.0.0" name="Device/Include/Device_LCD.h"/>
+
+                <!-- ======== Framework sources (read-only) ================ -->
+                <file category="sourceC" attr="config" version="1.0.0" name="Device/DeviceTemplates/Device_BEEP.c"/>
+                <file category="sourceC" attr="config" version="1.0.0" name="Device/DeviceTemplates/Device_KEY.c"/>
+                <file category="sourceC" attr="config" version="1.0.0" name="Device/DeviceTemplates/Device_LCD.c"/>
+                
+            </files>
+            <Pre_Include_Global_h>
+#define __EDAL_DEVICE__         1
+            </Pre_Include_Global_h>
+
+            <!-- Inject RTE_Components_h macro so code can detect the pack -->
+            <RTE_Components_h>
+#define __EDAL_DEVICE__         1
+            </RTE_Components_h>
+        </component>
+        
+    </components>
+
+</package>

@@ -17,7 +17,7 @@
 ****************************************************************************/
 
 /*============================ INCLUDES ======================================*/
-#include "../Include/Driver_SPI.h"
+#include "Driver/Include/Driver_SPI.h"
 
 /*============================ MACROS ========================================*/
 #define EDAL_SPI_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* driver version */
@@ -119,6 +119,7 @@ static int32_t EDAL_SPI_Control(uint32_t control, uint32_t arg)
 
         case EDAL_SPI_ABORT_TRANSFER:           // Abort current data transfer
             break;
+            
         default:
             return EDAL_DRIVER_ERROR_UNSUPPORTED;
     }

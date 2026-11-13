@@ -17,7 +17,7 @@
 ****************************************************************************/
 
 /*============================ INCLUDES ======================================*/
-#include "../Include/Device_KEY.h"
+#include "Device/Include/Device_KEY.h"
 
 /*============================ MACROS ========================================*/
 #define EDAL_KEY_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* driver version */
@@ -49,7 +49,8 @@ static int32_t EDAL_KEY_Uninitialize(void)
 }
 
 /*============================ PROTOTYPES ====================================*/
-extern EDAL_DEVICE_KEY EDAL_Device_KEY_(0);
+extern 
+EDAL_DEVICE_KEY EDAL_Device_KEY_(0);
 EDAL_DEVICE_KEY EDAL_Device_KEY_(0) = {
     EDAL_KEY_GetVersion,
     EDAL_KEY_Initialize,

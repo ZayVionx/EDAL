@@ -17,26 +17,85 @@
 ****************************************************************************/
 
 /*============================ INCLUDES ======================================*/
-#include "edal.h"
+#include "Device/Include/Device_LCD.h"
 
 /*============================ MACROS ========================================*/
+#define EDAL_LCD_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* driver version */
+
+
 /*============================ MACROFIED FUNCTIONS ===========================*/
 /*============================ TYPES =========================================*/
 /*============================ GLOBAL VARIABLES ==============================*/
 /*============================ LOCAL VARIABLES ===============================*/
-/*============================ PROTOTYPES ====================================*/
-/*============================ IMPLEMENTATION ================================*/
-/**
- * edal_board_devices_init - board device initialization entry point
- *
- * This placeholder does not initialize any devices.
- *
- * @retval: 1 unconditionally.
- */
-uint16_t edal_board_devices_init(void)
-{
+/* Device Version */
+static cosnt EDAL_VERSION DeviceVersion = {
+    EDAL_LCD_API_VERSION,
+    EDAL_LCD_DRV_VERSION
+};
 
-    return 1;
+/* Device Capabilities */
+static const EDAL_LCD_CAPABILITIES DeviceCapabilities = {
+    
+};
+
+/*============================ IMPLEMENTATION ================================*/
+static EDAL_VERSION EDAL_LCD_GetVersion(void)
+{
+    return DeviceVersion;
 }
+
+static EDAL_LCD_CAPABILITIES EDAL_LCD_GetCapabilities(void)
+{
+    return DeviceCapabilities;
+}
+
+static int32_t EDAL_LCD_Initialize(EDAL_LCD_SignalEvent_t cb_event)
+{
+}
+
+static int32_t EDAL_LCD_Uninitialize(void)
+{
+}
+
+static int32_t EDAL_LCD_PowerControl(EDAL_POWER_STATE state)
+{
+    switch(state)
+    {
+        case EDAL_POWER_OFF:
+            break;
+
+        case EDAL_POWER_LOW:
+            break;
+
+        case EDAL_POWER_FULL:
+            break;
+    }
+    return EDAL_DEVICE_OK;
+}
+
+static int32_t EDAL_LCD_Control(uint32_t control, uint32_t arg)
+{
+}
+
+static EDAL_LCD_STATUS EDAL_LCD_GetStatus(void)
+{
+}
+
+static void EDAL_LCD_SignalEvent(uint32_t event)
+{
+    // function body
+}
+
+/*============================ PROTOTYPES ====================================*/
+extern EDAL_DEVICE_LCD EDAL_Device_LCD_(0);
+EDAL_DEVICE_LCD EDAL_Device_LCD_(0) = {
+    EDAL_LCD_GetVersion,
+    EDAL_LCD_GetCapabilities,
+    EDAL_LCD_Initialize,
+    EDAL_LCD_Uninitialize,
+    EDAL_LCD_PowerControl,
+    EDAL_LCD_Control,
+    EDAL_LCD_GetStatus,
+};
 
 /*============================ END ===========================================*/

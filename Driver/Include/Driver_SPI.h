@@ -20,7 +20,7 @@
 #define __DRIVER_SPI_H__
 
 /*============================ INCLUDES ======================================*/
-#include "../../EDAL_Common.h"
+#include "EDAL_Common.h"
 
 #ifdef   __cplusplus
 extern "C" {
@@ -135,7 +135,7 @@ typedef struct _EDAL_SPI_CAPABILITIES {
  */
 typedef struct _EDAL_DRIVER_SPI {
     EDAL_VERSION            (*GetVersion)       (void);
-    EDAL_SPI_CAPABILITIES   (*GerCapabilities)  (void);
+    EDAL_SPI_CAPABILITIES   (*GetCapabilities)  (void);
     int32_t                 (*Initialize)       (EDAL_SPI_SignalEvent_t cb_event);
     int32_t                 (*Uninitialize)     (void);
     int32_t                 (*PowerControl)     (EDAL_POWER_STATE state);
