@@ -17,10 +17,10 @@
 ****************************************************************************/
 
 /*============================ INCLUDES ======================================*/
-#include "Device/Include/Device_KEY.h"
+#include "Device_KEY.h"
 
 /*============================ MACROS ========================================*/
-#define EDAL_KEY_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* driver version */
+#define EDAL_KEY_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(1, 0)  /* driver version */
 
 /*============================ MACROFIED FUNCTIONS ===========================*/
 /*============================ TYPES =========================================*/

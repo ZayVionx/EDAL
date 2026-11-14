@@ -17,10 +17,10 @@
 ****************************************************************************/
 
 /*============================ INCLUDES ======================================*/
-#include "Driver/Include/Driver_SPI.h"
+#include "Driver_SPI.h"
 
 /*============================ MACROS ========================================*/
-#define EDAL_SPI_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* driver version */
+#define EDAL_SPI_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(1, 0)  /* driver version */
 
 /*============================ MACROFIED FUNCTIONS ===========================*/
 /*============================ TYPES =========================================*/

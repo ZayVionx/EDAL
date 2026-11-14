@@ -26,7 +26,7 @@
 extern "C" {
 #endif
 /*============================ MACROS ========================================*/
-#define EDAL_KEY_API_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* API version */
+#define EDAL_KEY_API_VERSION    EDAL_VERSION_MAJOR_MINOR(1, 0)  /* API version */
 
 #define _EDAL_Device_KEY_(n)          Device_KEY##n
 #define  EDAL_Device_KEY_(n)    _EDAL_Device_KEY_(n)

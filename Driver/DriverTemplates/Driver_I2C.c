@@ -17,10 +17,10 @@
 ****************************************************************************/
 
 /*============================ INCLUDES ======================================*/
-#include "Driver/Include/Driver_I2C.h"
+#include "Driver_I2C.h"
 
 /*============================ MACROS ========================================*/
-#define EDAL_I2C_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* driver version */
+#define EDAL_I2C_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(1, 0)  /* driver version */
 
 /*============================ LOCAL VARIABLES ===============================*/
 /* Driver Version */

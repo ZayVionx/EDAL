@@ -33,11 +33,11 @@ extern "C" {
 /*============================ MACROFIED FUNCTIONS ===========================*/
 /*============================ TYPES =========================================*/
 /**
- * \brief Device Version
+ * \brief Version Number
  */
 typedef struct _EDAL_VERSION {
-    uint16_t api;
-    uint16_t drv;
+    uint16_t api;                           //!< Header file version
+    uint16_t drv;                           //!< Source file version
 } EDAL_VERSION;
 
 /**

@@ -26,7 +26,7 @@
 extern "C" {
 #endif
 /*============================ MACROS ========================================*/
-#define EDAL_SPI_API_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* API version */
+#define EDAL_SPI_API_VERSION    EDAL_VERSION_MAJOR_MINOR(1, 0)  /* API version */
 
 #define _EDAL_Driver_SPI_(n)          Driver_SPI##n
 #define  EDAL_Driver_SPI_(n)    _EDAL_Driver_SPI_(n)

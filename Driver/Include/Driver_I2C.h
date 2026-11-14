@@ -20,13 +20,13 @@
 #define __DRIVER_I2C_H__
 
 /*============================ INCLUDES ======================================*/
-#include "../../EDAL_Common.h"
+#include "EDAL_Common.h"
 
 #ifdef   __cplusplus
 extern "C" {
 #endif
 /*============================ MACROS ========================================*/
-#define EDAL_I2C_API_VERSION    EDAL_VERSION_MAJOR_MINOR(0, 0)  /* API version */
+#define EDAL_I2C_API_VERSION    EDAL_VERSION_MAJOR_MINOR(1, 0)  /* API version */
 
 
 #define _EDAL_Driver_I2C_(n)          Driver_I2C##n

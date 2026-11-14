@@ -20,7 +20,7 @@
 #define __DRIVER_GPIO_H__
 
 /*============================ INCLUDES ======================================*/
-#include "../../EDAL_Common.h"
+#include "EDAL_Common.h"
 
 #ifdef   __cplusplus
 extern "C" {

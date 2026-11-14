@@ -50,62 +50,199 @@
     <!--  Components                                                        -->
     <!-- ================================================================== -->
     <components>
-         <component Cclass="EDAL" Cgroup="Driver" Cversion="1.0.0">
+        <!-- 
+            Driver Component.
+            INCLUDE: GPIO、I2C、SPI.
+         -->
+
+        <!-- GPIO Driver -->
+        <component Cclass="EDAL" Cgroup="01_DRIVER" Csub="GPIO" Cversion="1.0.0">
             <description>
-                EDAL Driver api and template source.
+                EDAL GPIO driver.
             </description>
 
             <files>
-                <!-- ======== Framework headers (read-only) ================ -->
                 <file category="header" version="1.0.0" name="EDAL_Common.h"/>
                 <file category="header" version="1.0.0" name="Driver/Include/Driver_GPIO.h"/>
-                <file category="header" version="1.0.0" name="Driver/Include/Driver_I2C.h"/>
-                <file category="header" version="1.0.0" name="Driver/Include/Driver_SPI.h"/>
-
-                <!-- ======== Framework headers (read-write) ================ -->
                 <file category="sourceC" attr="config" version="1.0.0" name="Driver/DriverTemplates/Driver_GPIO.c"/>
-                <file category="sourceC" attr="config" version="1.0.0" name="Driver/DriverTemplates/Driver_I2C.c"/>
-                <file category="sourceC" attr="config" version="1.0.0" name="Driver/DriverTemplates/Driver_SPI.c"/>
-
             </files>
+
             <Pre_Include_Global_h>
-#define __EDAL_DRIVER__         1
+#define __RTE_EDAL_DRIVER_GPIO__
             </Pre_Include_Global_h>
 
-            <!-- Inject RTE_Components_h macro so code can detect the pack -->
             <RTE_Components_h>
-#define __EDAL_DRIVER__         1
+#define __RTE_EDAL_DRIVER_GPIO__
             </RTE_Components_h>
         </component>
 
-
-        <component Cclass="EDAL"  Cgroup="Device"  Cversion="1.1.0">
+        <!-- I2C Driver -->
+        <component Cclass="EDAL" Cgroup="01_DRIVER" Csub="I2C" Cversion="1.0.0">
             <description>
-                EDAL Device api and template source.
+                EDAL I2C driver.
             </description>
 
             <files>
-                <!-- ======== Framework headers (read-only) ================ -->
-                <file category="header" version="1.0.0" name="Device/Include/Device_BEEP.h"/>
-                <file category="header" version="1.0.0" name="Device/Include/Device_KEY.h"/>
-                <file category="header" version="1.0.0" name="Device/Include/Device_LCD.h"/>
-
-                <!-- ======== Framework sources (read-only) ================ -->
-                <file category="sourceC" attr="config" version="1.0.0" name="Device/DeviceTemplates/Device_BEEP.c"/>
-                <file category="sourceC" attr="config" version="1.0.0" name="Device/DeviceTemplates/Device_KEY.c"/>
-                <file category="sourceC" attr="config" version="1.0.0" name="Device/DeviceTemplates/Device_LCD.c"/>
-                
+                <file category="header" version="1.0.0" name="EDAL_Common.h"/>
+                <file category="header" version="1.0.0" name="Driver/Include/Driver_I2C.h"/>
+                <file category="sourceC" attr="config" version="1.0.0" name="Driver/DriverTemplates/Driver_I2C.c"/>
             </files>
+
             <Pre_Include_Global_h>
-#define __EDAL_DEVICE__         1
+#define __RTE_EDAL_DRIVER_I2C__
             </Pre_Include_Global_h>
 
-            <!-- Inject RTE_Components_h macro so code can detect the pack -->
             <RTE_Components_h>
-#define __EDAL_DEVICE__         1
+#define __RTE_EDAL_DRIVER_I2C__
             </RTE_Components_h>
         </component>
-        
+
+        <!-- SPI Driver -->
+        <component Cclass="EDAL" Cgroup="01_DRIVER" Csub="SPI" Cversion="1.0.0">
+            <description>
+                EDAL SPI driver.
+            </description>
+
+            <files>
+                <file category="header" version="1.0.0" name="EDAL_Common.h"/>
+                <file category="header" version="1.0.0" name="Driver/Include/Driver_SPI.h"/>
+                <file category="sourceC" attr="config" version="1.0.0" name="Driver/DriverTemplates/Driver_SPI.c"/>
+            </files>
+
+            <Pre_Include_Global_h>
+#define __RTE_EDAL_DRIVER_SPI__
+            </Pre_Include_Global_h>
+
+            <RTE_Components_h>
+#define __RTE_EDAL_DRIVER_SPI__
+            </RTE_Components_h>
+        </component>
+
+
+
+        <!-- 
+            Device Component.
+            INCLUDE: BEEP、KEY、LCD.
+         -->
+
+        <!-- Beep Device -->
+        <component Cclass="EDAL" Cgroup="02_DEVICE" Csub="BEEP" Cversion="1.0.0">
+            <description>
+                EDAL BEEP device.
+            </description>
+
+            <files>
+                <file category="header" version="1.0.0" name="EDAL_Common.h"/>
+                <file category="header" version="1.0.0" name="Device/Include/Device_BEEP.h"/>
+                <file category="sourceC" attr="config" version="1.0.0" name="Device/DeviceTemplates/Device_BEEP.c"/>
+            </files>
+
+            <Pre_Include_Global_h>
+#define __RTE_EDAL_DEVICE_BEEP__
+            </Pre_Include_Global_h>
+
+            <RTE_Components_h>
+#define __RTE_EDAL_DEVICE_BEEP__
+            </RTE_Components_h>
+        </component>
+
+        <!-- Key Device -->
+        <component Cclass="EDAL" Cgroup="02_DEVICE" Csub="KEY" Cversion="1.0.0">
+            <description>
+                EDAL KEY device.
+            </description>
+
+            <files>
+                <file category="header" version="1.0.0" name="EDAL_Common.h"/>
+                <file category="header" version="1.0.0" name="Device/Include/Device_KEY.h"/>
+                <file category="sourceC" attr="config" version="1.0.0" name="Device/DeviceTemplates/Device_KEY.c"/>
+            </files>
+
+            <Pre_Include_Global_h>
+#define __RTE_EDAL_DEVICE_KEY__
+            </Pre_Include_Global_h>
+
+            <RTE_Components_h>
+#define __RTE_EDAL_DEVICE_KEY__
+            </RTE_Components_h>
+        </component>
+
+        <!-- Lcd Device -->
+        <component Cclass="EDAL" Cgroup="02_DEVICE" Csub="LCD" Cvariant="ILI9341" Cversion="1.0.0">
+            <description>
+                EDAL LCD ILI9341 device.
+            </description>
+
+            <files>
+                <file category="header" version="1.0.0" name="EDAL_Common.h"/>
+                <file category="header" version="1.0.0" name="Device/Include/Device_LCD.h"/>
+
+                <file category="header"  attr="config" version="1.0.0" name="Device/Display/Device_LCD_Generic.h"/>
+                <file category="sourceC" attr="config" version="1.0.0" name="Device/Display/Device_LCD_ILI9341.c"/>
+
+                <!-- <file category="sourceC" attr="config" version="1.0.0" name="Device/DeviceTemplates/Device_LCD.c"/> -->
+            </files>
+
+            <Pre_Include_Global_h>
+#define __RTE_EDAL_DEVICE_LCD_ILI9341__
+            </Pre_Include_Global_h>
+
+            <RTE_Components_h>
+#define __RTE_EDAL_DEVICE_LCD_ILI9341__
+            </RTE_Components_h>
+        </component>
+
+
+        <component Cclass="EDAL" Cgroup="02_DEVICE" Csub="LCD" Cvariant="ST7789" Cversion="1.0.0">
+            <description>
+                EDAL LCD ST7789 device.
+            </description>
+
+            <files>
+                <file category="header" version="1.0.0" name="EDAL_Common.h"/>
+                <file category="header" version="1.0.0" name="Device/Include/Device_LCD.h"/>
+
+                <file category="header"  attr="config" version="1.0.0" name="Device/Display/Device_LCD_Generic.h"/>
+                <file category="sourceC" attr="config" version="1.0.0" name="Device/Display/Device_LCD_ST7789.c"/>
+
+                <!-- <file category="sourceC" attr="config" version="1.0.0" name="Device/DeviceTemplates/Device_LCD.c"/> -->
+            </files>
+
+            <Pre_Include_Global_h>
+#define __RTE_EDAL_DEVICE_LCD_ST7789__
+            </Pre_Include_Global_h>
+
+            <RTE_Components_h>
+#define __RTE_EDAL_DEVICE_LCD_ST7789__
+            </RTE_Components_h>
+        </component>
+
+
+        <component Cclass="EDAL" Cgroup="02_DEVICE" Csub="LCD" Cvariant="ST7796" Cversion="1.0.0">
+            <description>
+                EDAL LCD ST7796 device.
+            </description>
+
+            <files>
+                <file category="header" version="1.0.0" name="EDAL_Common.h"/>
+                <file category="header" version="1.0.0" name="Device/Include/Device_LCD.h"/>
+
+                <file category="header"  attr="config" version="1.0.0" name="Device/Display/Device_LCD_Generic.h"/>
+                <file category="sourceC" attr="config" version="1.0.0" name="Device/Display/Device_LCD_ST7796.c"/>
+
+                <!-- <file category="sourceC" attr="config" version="1.0.0" name="Device/DeviceTemplates/Device_LCD.c"/> -->
+            </files>
+
+            <Pre_Include_Global_h>
+#define __RTE_EDAL_DEVICE_LCD_ST7796__
+            </Pre_Include_Global_h>
+
+            <RTE_Components_h>
+#define __RTE_EDAL_DEVICE_LCD_ST7796__
+            </RTE_Components_h>
+        </component>
+
+
     </components>
 
 </package>
