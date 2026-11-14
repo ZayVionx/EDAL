@@ -31,6 +31,36 @@ extern "C" {
 #define _EDAL_Device_LCD_(n)          Device_LCD##n
 #define  EDAL_Device_LCD_(n)    _EDAL_Device_LCD_(n)
 
+
+/****** LCD Control Codes *****/
+
+#define EDAL_LCD_CONTROL_Pos                 0
+#define EDAL_LCD_CONTROL_Msk                (0xFFUL << EDAL_LCD_CONTROL_Pos)
+
+/*----- LCD Control Codes: Display Output -----*/
+#define EDAL_LCD_CONTROL_OUTPUT              0x01UL
+
+/*----- LCD Control Codes: Optional Output Adjustment -----*/
+#define EDAL_LCD_SET_BACKLIGHT               0x02UL
+#define EDAL_LCD_SET_CONTRAST                0x03UL
+
+/*----- LCD Control Codes: Optional Graphical Extensions -----*/
+#define EDAL_LCD_SET_ORIENTATION             0x10UL
+#define EDAL_LCD_SET_MIRROR                  0x11UL
+#define EDAL_LCD_SET_INVERSION               0x12UL
+
+/*----- LCD Control Arguments  -----*/
+#define EDAL_LCD_OUTPUT_OFF                  0UL
+#define EDAL_LCD_OUTPUT_ON                   1UL
+#define EDAL_LCD_MIRROR_NONE                 0UL
+#define EDAL_LCD_MIRROR_X                   (0x01UL << 0)
+#define EDAL_LCD_MIRROR_Y                   (0x01UL << 1)
+#define EDAL_LCD_ADJUSTMENT_MIN              0UL
+#define EDAL_LCD_ADJUSTMENT_MAX              1UL
+
+/****** LCD specific error codes *****/
+/* Use common device errors until a distinct error condition is required. */
+
 /*============================ MACROFIED FUNCTIONS ===========================*/
 /*============================ TYPES =========================================*/
 
@@ -41,7 +71,7 @@ typedef struct _EDAL_LCD_INFO {
     uint32_t width;
     uint32_t height;
     uint32_t id;
-    uint32_t Orientation;
+    uint32_t orientation;
     uint32_t scan_direction;
     uint32_t pixel_format;
     uint32_t reserved;
