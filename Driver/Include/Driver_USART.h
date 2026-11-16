@@ -136,20 +136,6 @@ extern "C" {
 /*============================ TYPES =========================================*/
 
 /**
- * \brief USART status
- */
-typedef struct _EDAL_USART_STATUS {
-    uint32_t tx_busy          : 1;          //!< Transmitter busy flag
-    uint32_t rx_busy          : 1;          //!< Receiver busy flag
-    uint32_t tx_underflow     : 1;          //!< Transmit data underflow detected (cleared on start of next send operation)
-    uint32_t rx_overflow      : 1;          //!< Receive data overflow detected (cleared on start of next receive operation)
-    uint32_t rx_break         : 1;          //!< Break detected on receive (cleared on start of next receive operation)
-    uint32_t rx_framing_error : 1;          //!< Framing error detected on receive (cleared on start of next receive operation)
-    uint32_t rx_parity_error  : 1;          //!< Parity error detected on receive (cleared on start of next receive operation)
-    uint32_t reserved         : 25;         //!< Reserved (must be zero)
-} EDAL_USART_STATUS;
-
-/**
  * \brief USART Modem Control
  */
 typedef enum _EDAL_USART_MODEM_CONTROL {
@@ -169,6 +155,20 @@ typedef struct _EDAL_USART_MODEM_STATUS {
     uint32_t ri       : 1;                  //!< RI  state: 1=Active, 0=Inactive
     uint32_t reserved : 28;                 //!< Reserved (must be zero)
 } EDAL_USART_MODEM_STATUS;
+
+/**
+ * \brief USART status
+ */
+typedef struct _EDAL_USART_STATUS {
+    uint32_t tx_busy          : 1;          //!< Transmitter busy flag
+    uint32_t rx_busy          : 1;          //!< Receiver busy flag
+    uint32_t tx_underflow     : 1;          //!< Transmit data underflow detected (cleared on start of next send operation)
+    uint32_t rx_overflow      : 1;          //!< Receive data overflow detected (cleared on start of next receive operation)
+    uint32_t rx_break         : 1;          //!< Break detected on receive (cleared on start of next receive operation)
+    uint32_t rx_framing_error : 1;          //!< Framing error detected on receive (cleared on start of next receive operation)
+    uint32_t rx_parity_error  : 1;          //!< Parity error detected on receive (cleared on start of next receive operation)
+    uint32_t reserved         : 25;         //!< Reserved (must be zero)
+} EDAL_USART_STATUS;
 
 
 // Function documentation

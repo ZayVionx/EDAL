@@ -207,9 +207,7 @@ typedef struct _EDAL_DRIVER_SPI {
     int32_t                 (*PowerControl)     (EDAL_POWER_STATE state);
     int32_t                 (*Send)             (const void *data, uint32_t num);
     int32_t                 (*Receive)          (      void *data, uint32_t num);
-    int32_t                 (*Transfer)         (const void *data_out,
-                                                       void *data_in,
-                                                 uint32_t    num);
+    int32_t                 (*Transfer)         (const void *data_out, void *data_in, uint32_t num);
     uint32_t                (*GetDataCount)     (void);
     int32_t                 (*Control)          (uint32_t control, uint32_t arg);
     EDAL_SPI_STATUS         (*GetStatus)        (void);
