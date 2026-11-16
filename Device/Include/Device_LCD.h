@@ -182,8 +182,8 @@ typedef struct _EDAL_DEVICE_LCD {
     int32_t                 (*SendCommand)      (uint32_t cmd);
     int32_t                 (*WriteData)        (const void *data, uint32_t num_bytes);
     int32_t                 (*ReadData)         (      void *data, uint32_t num_bytes);
-    int32_t                 (*Control)          (uint32_t control, uint32_t arg);
     EDAL_LCD_INFO           (*GetInfo)          (void);
+    int32_t                 (*Control)          (uint32_t control, uint32_t arg);
     EDAL_LCD_STATUS         (*GetStatus)        (void);
 } const EDAL_DEVICE_LCD;
 

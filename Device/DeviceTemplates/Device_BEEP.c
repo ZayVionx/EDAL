@@ -192,7 +192,7 @@ EDAL_DEVICE_BEEP EDAL_Device_BEEP_(0) = {
     EDAL_BEEP_PowerControl,
     EDAL_BEEP_Play,
     EDAL_BEEP_Control,
-    EDAL_BEEP_GetStatus,
+    EDAL_BEEP_GetStatus
 };
 
 /*============================ END ===========================================*/

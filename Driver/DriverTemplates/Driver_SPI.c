@@ -148,7 +148,7 @@ EDAL_DRIVER_SPI EDAL_Driver_SPI_(0) = {
     EDAL_SPI_Transfer,
     EDAL_SPI_GetDataCount,
     EDAL_SPI_Control,
-    EDAL_SPI_GetStatus,
+    EDAL_SPI_GetStatus
 };
 
 /*============================ END ===========================================*/

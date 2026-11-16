@@ -137,9 +137,9 @@ EDAL_DEVICE_LCD EDAL_Device_LCD_(0) = {
     EDAL_LCD_SendCommand,
     EDAL_LCD_WriteData,
     EDAL_LCD_ReadData,
-    EDAL_LCD_Control,
     EDAL_LCD_GetInfo,
-    EDAL_LCD_GetStatus,
+    EDAL_LCD_Control,
+    EDAL_LCD_GetStatus
 };
 
 /*============================ END ===========================================*/

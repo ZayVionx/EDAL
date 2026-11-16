@@ -28,6 +28,7 @@ extern "C" {
 /*============================ MACROS ========================================*/
 #define EDAL_SPI_API_VERSION    EDAL_VERSION_MAJOR_MINOR(1, 0)  /* API version */
 
+
 #define _EDAL_Driver_SPI_(n)          Driver_SPI##n
 #define  EDAL_Driver_SPI_(n)    _EDAL_Driver_SPI_(n)
 
@@ -98,6 +99,7 @@ extern "C" {
 #define EDAL_SPI_ERROR_BIT_ORDER            (EDAL_DRIVER_ERROR_SPECIFIC - 4)     //!< Specified Bit order not supported
 #define EDAL_SPI_ERROR_SS_MODE              (EDAL_DRIVER_ERROR_SPECIFIC - 5)     //!< Specified Slave Select Mode not supported
 
+
 /****** SPI Event *****/
 #define EDAL_SPI_EVENT_TRANSFER_COMPLETE    (1UL << 0)  //!< Data Transfer completed
 #define EDAL_SPI_EVENT_DATA_LOST            (1UL << 1)  //!< Data lost: Receive overflow / Transmit underflow
@@ -108,11 +110,75 @@ extern "C" {
 \brief SPI Status
 */
 typedef struct _EDAL_SPI_STATUS {
-  uint32_t busy       : 1;              //!< Transmitter/Receiver busy flag
-  uint32_t data_lost  : 1;              //!< Data lost: Receive overflow / Transmit underflow (cleared on start of transfer operation)
-  uint32_t mode_fault : 1;              //!< Mode fault detected; optional (cleared on start of transfer operation)
-  uint32_t reserved   : 29;
+    uint32_t busy       : 1;              //!< Transmitter/Receiver busy flag
+    uint32_t data_lost  : 1;              //!< Data lost: Receive overflow / Transmit underflow (cleared on start of transfer operation)
+    uint32_t mode_fault : 1;              //!< Mode fault detected; optional (cleared on start of transfer operation)
+    uint32_t reserved   : 29;             //!< Reserved (must be zero)
 } EDAL_SPI_STATUS;
+
+
+// Function documentation
+/**
+ * \fn          EDAL_VERSION EDAL_SPI_GetVersion (void)
+ * \brief       Get driver version.
+ * \return      \ref EDAL_VERSION
+ * 
+ * \fn          EDAL_SPI_CAPABILITIES EDAL_BEEP_GetCapabilities (void)
+ * \brief       Get driver capabilities.
+ * \return      \ref EDAL_SPI_CAPABILITIES
+ * 
+ * \fn          int32_t EDAL_SPI_Initialize (EDAL_SPI_SignalEvent_t cb_event)
+ * \brief       Initialize SPI Interface.
+ * \param[in]   cb_event  Pointer to \ref EDAL_SPI_SignalEvent
+ * \return      \ref execution_status
+ * 
+ * \fn          int32_t EDAL_SPI_Uninitialize (void)
+ * \brief       De-Initialize SPI Interface.
+ * \return      \ref execution_status
+ * 
+ * \fn          int32_t EDAL_SPI_PowerControl (EDAL_POWER_STATE state)
+ * \brief       Control SPI Interface Power.
+ * \param[in]   state  Power state
+ * \return      \ref execution_status
+ * 
+ * \fn          int32_t EDAL_SPI_Send (const void *data, uint32_t num)
+ * \brief       Start sending data to SPI transmitter.
+ * \param[in]   data  Pointer to buffer with data to send to SPI transmitter
+ * \param[in]   num   Number of data items to send
+ * \return      \ref execution_status
+ * 
+ * \fn          int32_t EDAL_SPI_Receive (void *data, uint32_t num)
+ * \brief       Start receiving data from SPI receiver.
+ * \param[out]  data  Pointer to buffer for data to receive from SPI receiver
+ * \param[in]   num   Number of data items to receice
+ * \return      \ref execution_status
+ * 
+ * \fn          int32_t EDAL_SPI_Transfer (const void *data_out, void *data_in, uint32_t num)
+ * \brief       Start sending/receiving data to/from SPI transmitter/receiver.
+ * \param[in]   data_out  Pointer to buffer with data to send to SPI transmitter
+ * \param[out]  data_in   Pointer to buffer for data to receive from SPI receiver
+ * \param[in]   num       Number of data items to receive
+ * \return      \ref execution_status
+ * 
+ * \fn          uint32_t EDAL_SPI_GetDataCount (void)
+ * \brief       Get transferred data count.
+ * \return      number of data items transferred
+ * 
+ * \fn          int32_t EDAL_SPI_Control (uint32_t control, uint32_t arg)
+ * \brief       Control SPI Interface.
+ * \param[in]   control  Operation
+ * \param[in]   arg      Argument of operation (optional)
+ * \return      common \ref execution_status and driver specific \ref spi_execution_status
+ * 
+ * \fn          EDAL_SPI_STATUS EDAL_SPI_GetStatus (void)
+ * \brief       Get SPI status.
+ * \return      SPI status \ref EDAL_SPI_STATUS
+ * 
+ * \fn          void EDAL_SPI_SignalEvent (uint32_t event)
+ * \brief       Signal SPI Events.
+ * \param[in]   event  \ref SPI_Events notification mask
+ * \return      none
+ */
 
 typedef void (*EDAL_SPI_SignalEvent_t) (uint32_t event);
 
