@@ -117,18 +117,6 @@ typedef struct _EDAL_KEY_STATUSS {
  * \param[in]   control  Operation  
  * \param[in]   arg      Argument of operation (optional)
  * \return      common \ref execution_status and device specific \ref key_execution_status
- * \note        Control codes are mutually exclusive; reserved control bits must be zero.
- * \note        Initialize enables notification of all events supported by the driver.
- *              SET_EVENT_MASK replaces the callback mask; recognition and status updates continue.
- *              Unknown event bits are invalid; known but unsupported events are not supported.
- *              EDAL_KEY_EVENT_ALL contains all API events, not only those supported by a driver.
- * \note        CONTROL_WAKEUP selects wakeup in EDAL_POWER_LOW independently of the callback mask.
- *              Wakeup is disabled after Initialize; use PowerControl to enter low-power mode.
- * \note        Timing commands require timing_config and the corresponding recognition capability.
- *              SET_DEBOUNCE_TIME requires debounce; repeat uses event_long_press_repeat.
- *              Timing changes during an active press/click recognition sequence return EDAL_DEVICE_ERROR_BUSY.
- * \note        Unsupported commands/features return EDAL_DEVICE_ERROR_UNSUPPORTED;
- *              invalid arguments return EDAL_DEVICE_ERROR_PARAMETER. Failed commands leave settings unchanged.
  * 
  * \fn          EDAL_KEY_STATUS EDAL_KEY_GetStatus (void)
  * \brief       Get KEY status.
@@ -148,17 +136,17 @@ typedef void (*EDAL_KEY_SignalEvent_t) (uint32_t event);
  * \brief KEY Device Capabilities. 
  */
 typedef struct _EDAL_KEY_CAPABILITIES {
-    uint32_t event_press                : 1;
-    uint32_t event_release              : 1;
-    uint32_t event_clicked              : 1;
-    uint32_t event_double_click         : 1;
-    uint32_t event_long_press           : 1;
-    uint32_t event_long_press_release   : 1;
-    uint32_t event_long_press_repeat    : 1;
-    uint32_t debounce                   : 1;
-    uint32_t timing_config              : 1;
-    uint32_t wakeup                     : 1;
-    uint32_t reserved                   : 22;     //!< Reserved (must be zero)
+    uint32_t event_press                : 1;    //!< Supports key press events
+    uint32_t event_release              : 1;    //!< Supports key release events
+    uint32_t event_clicked              : 1;    //!< Supports single-click events
+    uint32_t event_double_click         : 1;    //!< Supports double-click events
+    uint32_t event_long_press           : 1;    //!< Supports long-press events
+    uint32_t event_long_press_release   : 1;    //!< Supports release events after a long press
+    uint32_t event_long_press_repeat    : 1;    //!< Supports periodic repeat events while held after a long press
+    uint32_t debounce                   : 1;    //!< Supports key debouncing
+    uint32_t timing_config              : 1;    //!< Supports runtime configuration of recognition timing
+    uint32_t wakeup                     : 1;    //!< Supports wakeup from EDAL_POWER_LOW
+    uint32_t reserved                   : 22;   //!< Reserved (must be zero)
 } EDAL_KEY_CAPABILITIES;
 
 

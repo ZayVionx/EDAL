@@ -93,16 +93,16 @@ static const EDAL_VERSION DeviceVersion = {
 
 /* Device Capabilities */
 static const EDAL_KEY_CAPABILITIES DeviceCapabilities = {
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    0,  /* Supports key press events */
+    0,  /* Supports key release events */
+    0,  /* Supports single-click events */
+    0,  /* Supports double-click events */
+    0,  /* Supports long-press events */
+    0,  /* Supports release events after a long press */
+    0,  /* Supports periodic repeat events while held after a long press */
+    0,  /* Supports key debouncing */
+    0,  /* Supports runtime configuration of recognition timing */
+    0,  /* Supports wakeup from EDAL_POWER_LOW */
     0   /* Reserved (must be zero) */
 };
 
