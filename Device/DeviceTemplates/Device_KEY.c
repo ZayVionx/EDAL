@@ -22,8 +22,15 @@
 /*============================ MACROS ========================================*/
 #define EDAL_KEY_DRV_VERSION    EDAL_VERSION_MAJOR_MINOR(1, 0)  /* driver version */
 
+#define EDAL_KEY_USE_NUMBER     3
+#
 /*============================ MACROFIED FUNCTIONS ===========================*/
 /*============================ TYPES =========================================*/
+typedef enum {
+    
+    EDAL_KEY_MAX
+} EDAL_KEY_ID;
+
 /*============================ GLOBAL VARIABLES ==============================*/
 /*============================ LOCAL VARIABLES ===============================*/
 /* Device Version */
@@ -34,7 +41,13 @@ static const EDAL_VERSION DeviceVersion = {
 
 /* Device Capabilities */
 static const EDAL_KEY_CAPABILITIES DeviceCapabilities = {
-
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0   /* Reserved (must be zero) */
 };
 
@@ -73,8 +86,30 @@ static int32_t EDAL_KEY_PowerControl(EDAL_POWER_STATE state)
     return EDAL_DEVICE_OK;
 }
 
-static int32_t EDAL_KEY_Control(uint32_t control, uint32_t arg)
+static int32_t EDAL_KEY_Control(uint32_t id, uint32_t control, uint32_t arg)
 {
+    switch(control)
+    {
+        /* SET TIME */
+        case EDAL_KEY_SET_DEBOUNCE_TIME:
+            break;
+
+        case EDAL_KEY_SET_DOUBLE_CLICK_TIME:
+            break;
+
+        case EDAL_KEY_SET_LONG_PRESS_TIME:
+            break;
+
+        case EDAL_KEY_SET_REPEAT_PERIOD:
+            break;
+
+        /* SET EVENT */
+        case EDAL_KEY_ADD_EVENT_MASK:
+            break;
+
+        case EDAL_KEY_DEL_EVENT_MASK:
+            break;
+    }
 }
 
 static EDAL_KEY_STATUS EDAL_KEY_GetStatus(void)

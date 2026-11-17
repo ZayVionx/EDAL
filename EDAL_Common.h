@@ -23,6 +23,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include "EDAL_utils.h"
 
 #ifdef   __cplusplus
 extern "C" {
