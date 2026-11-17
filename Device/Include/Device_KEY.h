@@ -111,8 +111,9 @@ typedef struct _EDAL_KEY_STATUSS {
  * \param[in]   state  Power state
  * \return      \ref execution_status
  * 
- * \fn          int32_t EDAL_KEY_Control (uint32_t control, uint32_t arg)
+ * \fn          int32_t EDAL_KEY_Control (uint32_t id, uint32_t control, uint32_t arg)
  * \brief       Control KEY Interface.
+ * \param[in]   id       Key index, starting from 0
  * \param[in]   control  Operation  
  * \param[in]   arg      Argument of operation (optional)
  * \return      common \ref execution_status and device specific \ref key_execution_status
