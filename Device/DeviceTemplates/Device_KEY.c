@@ -31,22 +31,17 @@
  *----------------------------------------------------------------------------*/
 
  /* USER: set the total number of keys. */
-#define EDAL_KEY_COUNT                      2
+#define EDAL_KEY_COUNT                      ( 2 )
 
 /* USER: configure one GPIO port and pin for each key. */
-#define EDAL_KEY0_GPIO_PORT                 (NULL)
-#define EDAL_KEY0_GPIO_PIN                  (NULL)
+#define EDAL_KEY0_GPIO_PORT                 ( NULL )
+#define EDAL_KEY0_GPIO_PIN                  ( NULL )
 
-#define EDAL_KEY1_GPIO_PORT                 (NULL)
-#define EDAL_KEY1_GPIO_PIN                  (NULL)
-
-/* ADD KEY n HERE:
- * #define EDAL_KEYn_GPIO_PORT                 (your_gpio_port)
- * #define EDAL_KEYn_GPIO_PIN                  (your_gpio_pin)
- */
+#define EDAL_KEY1_GPIO_PORT                 ( NULL )
+#define EDAL_KEY1_GPIO_PIN                  ( NULL )
 
 /* USER: replace this with the platform GPIO input function. */
-#define EDAL_KEY_GPIO_ReadInputDataBit      (NULL)
+#define EDAL_KEY_GPIO_ReadInputDataBit      ( NULL )
 
 /*----------------------------------------------------------------------------
  *                             USER CONFIGURATION 
@@ -64,20 +59,12 @@
 EDAL_KEY_DEFINE_LEVEL_READ(0)
 EDAL_KEY_DEFINE_LEVEL_READ(1)
 
-/* ADD KEY n HERE:
- * EDAL_KEY_DEFINE_LEVEL_READ(n)
- */
-
 #undef EDAL_KEY_DEFINE_LEVEL_READ
 
 /* USER: add one reader for each key, using the same order. */
-static bool (*const s_edal_key_get_level[])(void) = {
+static bool (*const edal_key_get_level[])(void) = {
     EDAL_KEY0_ReadLevel,
     EDAL_KEY1_ReadLevel,
-
-    /* ADD KEY n HERE:
-     * EDAL_KEYn_ReadLevel,
-     */
 };
 
 #endif

@@ -183,7 +183,8 @@ static void EDAL_BEEP_SignalEvent(uint32_t event)
 }
 
 /*============================ PROTOTYPES ====================================*/
-extern EDAL_DEVICE_BEEP EDAL_Device_BEEP_(0);
+extern 
+EDAL_DEVICE_BEEP EDAL_Device_BEEP_(0);
 EDAL_DEVICE_BEEP EDAL_Device_BEEP_(0) = {
     EDAL_BEEP_GetVersion,
     EDAL_BEEP_GetCapabilities,
