@@ -27,7 +27,7 @@
 #if 0   /* USER: change to 1 to enable this block */
 
 /*----------------------------------------------------------------------------
- *                             USER CONFIGURATION                                                           
+ *                             USER CONFIGURATION   
  *----------------------------------------------------------------------------*/
 
  /* USER: set the total number of keys. */
@@ -49,7 +49,7 @@
 #define EDAL_KEY_GPIO_ReadInputDataBit      (NULL)
 
 /*----------------------------------------------------------------------------
- *                             USER CONFIGURATION                                                           
+ *                             USER CONFIGURATION 
  *----------------------------------------------------------------------------*/
 
  /* Do not modify this section. */
